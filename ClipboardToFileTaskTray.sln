@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardToFileTaskTray", "ClipboardToFileTaskTray\ClipboardToFileTaskTray.csproj", "{630E4415-4F73-4D0A-A3A7-339D1B9316E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{65648C16-AC21-4779-9C55-184EE23BEBB8} = {65648C16-AC21-4779-9C55-184EE23BEBB8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardToFile", "ClipboardToFile\ClipboardToFile.csproj", "{65648C16-AC21-4779-9C55-184EE23BEBB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{630E4415-4F73-4D0A-A3A7-339D1B9316E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630E4415-4F73-4D0A-A3A7-339D1B9316E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630E4415-4F73-4D0A-A3A7-339D1B9316E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630E4415-4F73-4D0A-A3A7-339D1B9316E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65648C16-AC21-4779-9C55-184EE23BEBB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65648C16-AC21-4779-9C55-184EE23BEBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65648C16-AC21-4779-9C55-184EE23BEBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65648C16-AC21-4779-9C55-184EE23BEBB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44CDD7B2-36CA-4535-9809-9F0F82662E4A}
+	EndGlobalSection
+EndGlobal
