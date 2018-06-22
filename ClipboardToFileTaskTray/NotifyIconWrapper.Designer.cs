@@ -34,6 +34,7 @@
             this.toolStripMenuItem_Config = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenuStrip.SuspendLayout();
             // 
             // ContextMenuStrip
@@ -41,6 +42,7 @@
             this.ContextMenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.ContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_Config,
+            this.toolStripSeparator1,
             this.toolStripMenuItem_Exit});
             this.ContextMenuStrip.Name = "contextMenuStrip1";
             this.ContextMenuStrip.Size = new System.Drawing.Size(139, 76);
@@ -63,6 +65,11 @@
             this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
             this.NotifyIcon.Text = "ClipboardToFile";
             this.NotifyIcon.Visible = true;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
             this.ContextMenuStrip.ResumeLayout(false);
 
         }
@@ -73,5 +80,6 @@
         private System.Windows.Forms.NotifyIcon NotifyIcon;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Config;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Exit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
