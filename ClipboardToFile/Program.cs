@@ -62,17 +62,27 @@ namespace ClipboardToFile
                 var postFix = 1;
                 while (true)
                 {
-                    var folder = Path.GetDirectoryName(filePath);
-                    var name = Path.GetFileNameWithoutExtension(filePath);
+                    var folderPath = Path.GetDirectoryName(filePath);
+                    var fileName = Path.GetFileNameWithoutExtension(filePath);
                     var ext = Path.GetExtension(filePath);
 
-                    var newName = $"{name}_{postFix}";
-                    var newPath = Path.Combine(folder, $"{newName}{ext}");
+                    var newName = $"{fileName}_{postFix}";
+                    var newPath = Path.Combine(folderPath, $"{newName}{ext}");
                     if (!File.Exists(newPath))
                         return newPath;
 
                     postFix++;
                 }
+            }
+
+            //ファイル名にタイムスタンプを付加する。
+            string AddTimeStampToFilePath(string filePath)
+            {
+                var folderPath = Path.GetDirectoryName(filePath);
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
+                var ext = Path.GetExtension(filePath);//ドットまで含まれるので注意。例：「.jpg」
+
+                return Path.Combine(folderPath, $"{fileName}_{DateTime.Now.ToString("yyyyMMddHHmmss")}{ext}");
             }
 
 
@@ -98,7 +108,7 @@ namespace ClipboardToFile
                     return;
 
                 var outputFilePath = Path.Combine(outputFolderPath, "clipboard.html");
-                outputFilePath = getNewFilePath(outputFilePath);
+                outputFilePath = AddTimeStampToFilePath(outputFilePath);
 
                 File.WriteAllText(outputFilePath, data);
 
@@ -128,7 +138,7 @@ namespace ClipboardToFile
                 }
 
                 var outputFilePath = Path.Combine(outputFolderPath, $"clipboard.{extension}");
-                outputFilePath = getNewFilePath(outputFilePath);
+                outputFilePath = AddTimeStampToFilePath(outputFilePath);
 
                 //保存時に形式を指定できる。わーお
                 data.Save(outputFilePath, imageFormat);
@@ -143,7 +153,7 @@ namespace ClipboardToFile
                     return;
 
                 var outputFilePath = Path.Combine(outputFolderPath, "clipboard.txt");
-                outputFilePath = getNewFilePath(outputFilePath);
+                outputFilePath = AddTimeStampToFilePath(outputFilePath);
 
                 File.WriteAllText(outputFilePath, data);
 
