@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-
+using CommonLibrary;
 
 namespace ClipboardToFile
 {
@@ -17,9 +17,11 @@ namespace ClipboardToFile
         static void Main(string[] args)
         {
 
-            if (args.Length == 0)
+            if (args.Length != 2)//パスと画像出力形式の二つ
                 return;
+
             var outputFolderPath = args[0];
+            var outputImageType = args[1];
 
             if (!Directory.Exists(outputFolderPath))
                 return;
@@ -29,7 +31,7 @@ namespace ClipboardToFile
             if (cbData == null)
                 return;
 
-            OutputClipboardContent(cbData, outputFolderPath);
+            OutputClipboardContent(cbData, outputFolderPath, outputImageType);
 
         }
 
@@ -39,7 +41,7 @@ namespace ClipboardToFile
         /// </summary>
         /// <param name="cbData"></param>
         /// <param name="outputFolderPath"></param>
-        private static void OutputClipboardContent(IDataObject cbData, string outputFolderPath)
+        private static void OutputClipboardContent(IDataObject cbData, string outputFolderPath, string outputImageType)
         {
             if (cbData == null) return;
 
@@ -107,11 +109,29 @@ namespace ClipboardToFile
                 //Bitmap形式で変数に突っ込む
                 var data = (Bitmap)Clipboard.GetDataObject().GetData(DataFormats.Bitmap);
 
-                var outputFilePath = Path.Combine(outputFolderPath, "clipboard.jpg");
+                var extension = OutputImageType.JPEG;
+                System.Drawing.Imaging.ImageFormat imageFormat = null;
+                switch (outputImageType)
+                {
+                    case OutputImageType.JPEG:
+                        extension = "jpg";
+                        imageFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
+                        break;
+                    case OutputImageType.PNG:
+                        extension = "png";
+                        imageFormat = System.Drawing.Imaging.ImageFormat.Png;
+                        break;
+                    case OutputImageType.Bitmap:
+                        extension = "bmp";
+                        imageFormat = System.Drawing.Imaging.ImageFormat.Bmp;
+                        break;
+                }
+
+                var outputFilePath = Path.Combine(outputFolderPath, $"clipboard.{extension}");
                 outputFilePath = getNewFilePath(outputFilePath);
 
                 //保存時に形式を指定できる。わーお
-                data.Save(outputFilePath,System.Drawing.Imaging.ImageFormat.Jpeg);
+                data.Save(outputFilePath, imageFormat);
 
                 return;
             }

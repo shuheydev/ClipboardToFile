@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>ClipboardToFile</ProductName>
     <SuiteName>ClipboardToFile</SuiteName>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -155,12 +155,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClipboardToFile\ClipboardToFile.csproj">
-      <Project>{65648c16-ac21-4779-9c55-184ee23bebb8}</Project>
-      <Name>ClipboardToFile</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Icon\clipboard.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +167,16 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClipboardToFile\ClipboardToFile.csproj">
+      <Project>{65648c16-ac21-4779-9c55-184ee23bebb8}</Project>
+      <Name>ClipboardToFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{d0384a17-4f83-4f46-89ae-66d9ae4ee8ac}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

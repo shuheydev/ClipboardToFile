@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using CommonLibrary;
 
 namespace ClipboardToFileTaskTray
 {
@@ -16,7 +18,7 @@ namespace ClipboardToFileTaskTray
             //前回の設定情報を復元
             CheckBox_AddToContextMenu.IsChecked = Properties.Settings.Default.AddToContextMenuSetting;
             CheckBox_ExecuteAtStartup.IsChecked = Properties.Settings.Default.ExecuteAtStartupSetting;
-
+            ComboBox_OutputImageType.SelectedIndex = Properties.Settings.Default.OutputImageTypeIndex;
         }
 
 
@@ -52,10 +54,26 @@ namespace ClipboardToFileTaskTray
         {
             Properties.Settings.Default.AddToContextMenuSetting = (bool)CheckBox_AddToContextMenu.IsChecked;
             Properties.Settings.Default.ExecuteAtStartupSetting = (bool)CheckBox_ExecuteAtStartup.IsChecked;
+            Properties.Settings.Default.OutputImageTypeIndex = ComboBox_OutputImageType.SelectedIndex;
             Properties.Settings.Default.Save();
 
             if (Properties.Settings.Default.AddToContextMenuSetting)
             {
+                //画像出力形式
+                var outputImageType =OutputImageType.JPEG;
+                switch(Properties.Settings.Default.OutputImageTypeIndex)
+                {
+                    case 0:
+                        outputImageType = OutputImageType.JPEG;
+                        break;
+                    case 1:
+                        outputImageType = OutputImageType.PNG;
+                        break;
+                    case 2:
+                        outputImageType = OutputImageType.Bitmap;
+                        break;
+                }
+
                 var regkey =
                     Microsoft.Win32.Registry.CurrentUser.CreateSubKey(appContextMenuRegKeyTree);
                 regkey?.SetValue(null, contextMenuLabel);
@@ -67,7 +85,7 @@ namespace ClipboardToFileTaskTray
 
                 var regkey_command =
                     Microsoft.Win32.Registry.CurrentUser.CreateSubKey(appContextMenuCommandRegKeyTree);
-                regkey_command?.SetValue(null, $"{clipboardToFileExePath} \"%V\"");//%Vに現在のフォルダのパスが入る。
+                regkey_command?.SetValue(null, $"{clipboardToFileExePath} \"%V\" {outputImageType}");//%Vに現在のフォルダのパスが入る。
                 regkey_command.Close();
             }
             else
@@ -101,5 +119,9 @@ namespace ClipboardToFileTaskTray
         {
             this.Visibility = Visibility.Hidden;
         }
+
+
+
+
     }
 }

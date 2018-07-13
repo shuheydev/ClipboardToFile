@@ -11,5 +11,11 @@
         <CheckBox Name="CheckBox_ExecuteAtStartup" Content="起動時に実行" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
         <Button Name="Button_ApplySetting" Content="OK" HorizontalAlignment="Right" Margin="0,0,95,10.5" VerticalAlignment="Bottom" Width="74" Click="Button_ApplySetting_Click"/>
         <Button Name="Button_CancelSetting" Content="キャンセル" HorizontalAlignment="Right" Margin="0,0,10,10.5" VerticalAlignment="Bottom" Width="75" Click="Button_CancelSetting_Click"/>
+        <Label Content="画像ファイル形式" HorizontalAlignment="Left" Margin="5,81,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="ComboBox_OutputImageType" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="139">
+            <ComboBoxItem Content="JPEG"/>
+            <ComboBoxItem Content="PNG"/>
+            <ComboBoxItem Content="Bitmap"/>
+        </ComboBox>
     </Grid>
 </Window>
