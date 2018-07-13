@@ -49,7 +49,6 @@ namespace ClipboardToFileTaskTray
         /// <param name="e">Event arguments for the event.</param>
 
         private static void OnClipboardUpdate(EventArgs e)
-
         {
 
             var handler = ClipboardUpdate;

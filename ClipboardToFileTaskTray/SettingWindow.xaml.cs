@@ -67,7 +67,7 @@ namespace ClipboardToFileTaskTray
 
                 var regkey_command =
                     Microsoft.Win32.Registry.CurrentUser.CreateSubKey(appContextMenuCommandRegKeyTree);
-                regkey_command?.SetValue(null, $"{clipboardToFileExePath} \"%V\"");
+                regkey_command?.SetValue(null, $"{clipboardToFileExePath} \"%V\"");//%Vに現在のフォルダのパスが入る。
                 regkey_command.Close();
             }
             else

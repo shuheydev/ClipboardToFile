@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\shuhei\Desktop\ClipboadToFile_インストーラ\</PublishUrl>
+    <PublishUrl>C:\Users\shuhei\OneDrive - Shuhei Nishizawa\インストーラ\ClipboadToFile_インストーラ\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>ClipboardToFile</ProductName>
     <SuiteName>ClipboardToFile</SuiteName>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

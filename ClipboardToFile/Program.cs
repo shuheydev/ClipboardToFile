@@ -104,12 +104,14 @@ namespace ClipboardToFile
             }
             else if (cbData.GetDataPresent(DataFormats.Bitmap))
             {
+                //Bitmap形式で変数に突っ込む
                 var data = (Bitmap)Clipboard.GetDataObject().GetData(DataFormats.Bitmap);
 
-                var outputFilePath = Path.Combine(outputFolderPath, "clipboard.bmp");
+                var outputFilePath = Path.Combine(outputFolderPath, "clipboard.jpg");
                 outputFilePath = getNewFilePath(outputFilePath);
 
-                data.Save(outputFilePath);
+                //保存時に形式を指定できる。わーお
+                data.Save(outputFilePath,System.Drawing.Imaging.ImageFormat.Jpeg);
 
                 return;
             }

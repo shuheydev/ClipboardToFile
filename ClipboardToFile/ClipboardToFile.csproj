@@ -66,9 +66,16 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="McMaster.Extensions.CommandLineUtils, Version=2.2.4.0, Culture=neutral, PublicKeyToken=6f71cb76b82f055d, processorArchitecture=MSIL">
+      <HintPath>..\packages\McMaster.Extensions.CommandLineUtils.2.2.4\lib\net45\McMaster.Extensions.CommandLineUtils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -85,6 +92,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClipboardToFile_TemporaryKey.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
