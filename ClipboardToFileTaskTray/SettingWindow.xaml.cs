@@ -48,7 +48,7 @@ namespace ClipboardToFileTaskTray
             this.Visibility = Visibility.Hidden;
         }
 
-
+        
 
         private void Button_ApplySetting_Click(object sender, RoutedEventArgs e)
         {
