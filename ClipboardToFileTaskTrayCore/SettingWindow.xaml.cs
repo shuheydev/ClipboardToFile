@@ -35,7 +35,7 @@ namespace ClipboardToFileTaskTrayCore
 
         private readonly string executeAtStartupKeyTree = @"Software\Microsoft\Windows\CurrentVersion\Run";
 
-        private readonly string clipboardToFileExeName = "ClipboardToFile.exe";
+        private readonly string clipboardToFileExeName = "ClipboardToFileCore.exe";
         private readonly string contextMenuLabel = "Clipboard To File";
         private readonly string applicationName = "ClipboardToFile";
 
